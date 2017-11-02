@@ -8,7 +8,11 @@
   <servlet>
     <servlet-name>ManufacturerServlet</servlet-name>
     <servlet-class>servlets.ManufacturerServlet</servlet-class>
+  </servlet>
 
+  <servlet>
+    <servlet-name>addManufacturer</servlet-name>
+    <servlet-class>servlets.AddManufacturerServlet</servlet-class>
   </servlet>
 
   <!-- URL space mappings ============================================= -->
@@ -16,6 +20,11 @@
   <servlet-mapping>
     <servlet-name>ManufacturerServlet</servlet-name>
     <url-pattern>/manufacturer</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>addManufacturer</servlet-name>
+    <url-pattern>/add</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 
 public class ManufacturerDAO {
     private Long id;
-    private String manufacturerName;
+    private String name;
 
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
@@ -16,7 +16,7 @@ public class ManufacturerDAO {
         Manufacturer manufacturer = new Manufacturer();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        manufacturer.setManufacturerName(manufacturerName);
+        manufacturer.setManufacturerName(name);
         transaction.commit();
         session.close();
     }
@@ -25,7 +25,7 @@ public class ManufacturerDAO {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Manufacturer manufacturer = session.get(Manufacturer.class, id);
-        manufacturer.setManufacturerName(manufacturerName);
+        manufacturer.setManufacturerName(name);
         transaction.commit();
         session.close();
     }
