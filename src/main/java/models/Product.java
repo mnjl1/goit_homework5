@@ -9,17 +9,17 @@ import java.util.UUID;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "productId")
+    @Column(name = "product_id")
     private UUID id;
 
-    @Column(name = "productName")
+    @Column(name = "product_name")
     private String productName;
 
     @Column(name = "price", scale = 2)
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manufacturerId")
+    @JoinColumn(name = "manufacturer_id")
     private Manufacturer manufacturer;
 
     public UUID getId() {

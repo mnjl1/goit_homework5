@@ -12,6 +12,14 @@ public class ManufacturerDAO {
 
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
+    public void create(Manufacturer manufacturer) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(manufacturer);
+        transaction.commit();
+        session.close();
+    }
+
     public void create(){
         Manufacturer manufacturer = new Manufacturer();
         Session session = sessionFactory.openSession();
@@ -46,5 +54,12 @@ public class ManufacturerDAO {
         transaction.commit();
         session.close();
         return manufacturer;
+    }
+
+    public static void main(String[] args) {
+        ManufacturerDAO dao = new ManufacturerDAO();
+        Manufacturer m = new Manufacturer();
+        m.setManufacturerName("Test name");
+        dao.create(m);
     }
 }

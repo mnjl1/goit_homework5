@@ -20,7 +20,7 @@ public class ManufacturerServlet extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
 
-        Long manufactureId = Long.parseLong(request.getParameter("id"));
+        Long manufactureId = Long.parseLong(request.getParameter("manufacturer_id"));
         Manufacturer manufacturer = getById(manufactureId);
         writer.println(
                 "<html>" +
@@ -37,7 +37,7 @@ public class ManufacturerServlet extends HttpServlet {
                         "</html>");
     }
 
-    public Manufacturer getById(Long id){
-        return this.manufacturerDAO.getById(id);
+    public Manufacturer getById(Long manufacturerId){
+        return this.manufacturerDAO.getById(manufacturerId);
     }
 }

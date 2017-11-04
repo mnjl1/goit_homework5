@@ -20,9 +20,9 @@ public class AddManufacturerServlet extends HttpServlet {
         response.setContentType("text/html; charset = utf-8");
 
         try {
-            String name = request.getParameter("manufacturerName");
+            String manufacturerName = request.getParameter("manufacturer_name");
             Manufacturer manufacturer = new Manufacturer();
-            manufacturer.setManufacturerName(name);
+            manufacturer.setManufacturerName(manufacturerName);
             ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
             manufacturerDAO.create();
 

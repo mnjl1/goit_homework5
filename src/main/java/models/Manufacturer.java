@@ -8,10 +8,10 @@ import java.util.Set;
 public class Manufacturer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "manufacturerId")
+    @Column(name = "manufacturer_id")
     private Long id;
 
-    @Column(name = "manufactureName")
+    @Column(name = "manufacture_name")
     private String manufacturerName;
 
     @OneToMany(fetch = FetchType.LAZY)
