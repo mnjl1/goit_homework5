@@ -1,5 +1,9 @@
 C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\servlets\AddManufacturerServlet.java
+C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\servlets\AddProductServlet.java
+C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\servlets\GetAllManufacturersServlet.java
+C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\servlets\UpdateManufacturerServlet.java
 C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\dao\ManufacturerDAO.java
 C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\models\Product.java
 C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\servlets\ManufacturerServlet.java
 C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\models\Manufacturer.java
+C:\Users\Dmytro\IdeaProjects\goit_homework5\src\main\java\dao\ProductDAO.java

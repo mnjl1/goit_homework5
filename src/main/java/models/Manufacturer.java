@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -11,11 +12,11 @@ public class Manufacturer {
     @Column(name = "manufacturer_id")
     private Long id;
 
-    @Column(name = "manufacture_name")
+    @Column(name = "manufacturer_name")
     private String manufacturerName;
 
     @OneToMany(fetch = FetchType.LAZY)
-    Set<Product> products;
+    Set<Product> products = new HashSet <Product>(0);
 
     public Long getId() {
         return id;
@@ -39,6 +40,10 @@ public class Manufacturer {
 
     public void setProducts(Set <Product> products) {
         this.products = products;
+    }
+
+    public void addProduct(Product product){
+        products.add(product);
     }
 
     @Override

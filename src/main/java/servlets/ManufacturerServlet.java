@@ -14,8 +14,6 @@ public class ManufacturerServlet extends HttpServlet {
     ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        System.out.println("starting...");
         response.setContentType("text/html");
 
         PrintWriter writer = response.getWriter();

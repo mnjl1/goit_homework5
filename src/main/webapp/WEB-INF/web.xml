@@ -15,6 +15,21 @@
     <servlet-class>servlets.AddManufacturerServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>UpdateManufacturerServlet</servlet-name>
+    <servlet-class>servlets.UpdateManufacturerServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>GetAllManufacturersServlet</servlet-name>
+    <servlet-class>servlets.GetAllManufacturersServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>addProductServlet</servlet-name>
+    <servlet-class>servlets.AddProductServlet</servlet-class>
+  </servlet>
+
   <!-- URL space mappings ============================================= -->
 
   <servlet-mapping>
@@ -24,7 +39,22 @@
 
   <servlet-mapping>
     <servlet-name>addManufacturer</servlet-name>
-    <url-pattern>/add</url-pattern>
+    <url-pattern>/add-manufacturer</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>UpdateManufacturerServlet</servlet-name>
+    <url-pattern>/update-manufacturer</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>GetAllManufacturersServlet</servlet-name>
+    <url-pattern>/get-all-manufacturers</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>addProductServlet</servlet-name>
+    <url-pattern>/add-product</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -2,4 +2,5 @@ dao\ManufacturerDAO.class
 models\Manufacturer.class
 servlets\AddManufacturerServlet.class
 models\Product.class
+servlets\UpdateManufacturerServlet.class
 servlets\ManufacturerServlet.class

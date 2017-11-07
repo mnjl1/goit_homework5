@@ -1,45 +1,43 @@
 package dao;
 
 import models.Manufacturer;
+import models.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.query.Query;
 
-import java.util.List;
-
-public class ManufacturerDAO {
-    private Long id;
-    private String manufacturerName;
-
+public class ProductDAO {
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
-    public void create(String manufacturerName) {
+    public void create(String productName, Long manufacturerId) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setManufacturerName(manufacturerName);
+        Product product = new Product();
+        product.setProductName(productName);
+        Manufacturer manufacturer = session.get(Manufacturer.class, manufacturerId);
+        manufacturer.addProduct(product);
+        session.save(product);
         session.save(manufacturer);
         transaction.commit();
         session.close();
     }
 
-    public void update(String manufacturerName, long id){
-        Manufacturer manufacturer = new Manufacturer();
+    public void update(String productName, long id){
+        Product product = new Product();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        manufacturer = session.get(Manufacturer.class, id);
-        manufacturer.setManufacturerName(manufacturerName);
+        product = session.get(Product.class, id);
+        product.setProductName(productName);
         transaction.commit();
         session.close();
     }
 
-    public void delete(Long manufacturerId){
+    public void delete(Long productId){
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
-        Manufacturer manufacturer = session.get(Manufacturer.class, manufacturerId);
-        session.delete(manufacturer);
+        Product product = session.get(Product.class, productId);
+        session.delete(product);
         transaction.commit();
         session.close();
     }
@@ -51,16 +49,9 @@ public class ManufacturerDAO {
         return manufacturer;
     }
 
-    public List <Manufacturer> getAll(){
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        Query query = session.getSession().createQuery("from Manufacturer");
-        List<Manufacturer> manufacturerList =query.getResultList();
-        return manufacturerList;
-    }
-
     public static void main(String[] args) {
-        ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
-        manufacturerDAO.getAll();
+        ManufacturerDAO dao = new ManufacturerDAO();
+        dao.create("Nestle");
+
     }
 }
