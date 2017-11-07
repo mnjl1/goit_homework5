@@ -22,6 +22,7 @@
     <s:combobox label = "Производитель?"
         list ="manufacturerList"
         name="manufacturerName"/>
+    <input type="submit" value="Добавить продукт.">
 
 </form>
 
