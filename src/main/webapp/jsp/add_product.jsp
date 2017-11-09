@@ -19,10 +19,15 @@
 
     <p>Указать производителя.</p>
 
-    <s:combobox label = "Производитель?"
-        list ="manufacturerList"
-        name="manufacturerName"/>
-    <input type="submit" value="Добавить продукт.">
+    <select name="list">
+        <c:forEach items="${manufacturerList}" var="manufacturerName">
+            <option value="${databaseValue}">
+                    ${manufacturerName}
+            </option>
+        </c:forEach>
+    </select>
+
+    <input type="submit" value="Добавить.">
 
 </form>
 

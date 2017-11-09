@@ -24,6 +24,7 @@ public class AddProductServlet extends HttpServlet {
         try{
             ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
             List<Manufacturer> manufacturerList = manufacturerDAO.getAll();
+            request.setAttribute("list", manufacturerList);
 
             String productName = request.getParameter("productName");
             Long manufacturerId = Long.parseLong(request.getParameter("manufactureId"));
