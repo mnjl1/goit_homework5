@@ -1,4 +1,5 @@
-<%--
+<%@ page import="models.Manufacturer" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Dmytro
   Date: 05.11.2017
@@ -19,13 +20,25 @@
 
     <p>Указать производителя.</p>
 
-    <select name="list">
-        <c:forEach items="${manufacturerList}" var="manufacturerName">
-            <option value="${databaseValue}">
-                    ${manufacturerName}
-            </option>
-        </c:forEach>
+
+    <select name="list" style="width: 50mm">
+        <option value="">Производитель</option>
+        <%!
+            private String manufacturerName;
+            private Long manufacturerId;
+        %><%
+            List<Manufacturer> manufacturerList = (List<Manufacturer>) request.getAttribute("list");
+
+            for(Manufacturer m: manufacturerList) {
+                manufacturerName = m.getManufacturerName();
+                manufacturerId = m.getId();
+                %>
+                <option value="<%=manufacturerId%>">"<%=manufacturerName%>"</option>
+            <%}
+        %>
+
     </select>
+
 
     <input type="submit" value="Добавить.">
 

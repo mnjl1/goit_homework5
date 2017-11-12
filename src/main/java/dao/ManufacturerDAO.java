@@ -10,8 +10,6 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class ManufacturerDAO {
-    private Long id;
-    private String manufacturerName;
 
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
@@ -56,11 +54,12 @@ public class ManufacturerDAO {
         Transaction transaction = session.beginTransaction();
         Query query = session.getSession().createQuery("from Manufacturer");
         List<Manufacturer> manufacturerList =query.getResultList();
+        session.close();
         return manufacturerList;
     }
 
     public static void main(String[] args) {
         ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
-        manufacturerDAO.getAll();
+        manufacturerDAO.create("Nestle");
     }
 }

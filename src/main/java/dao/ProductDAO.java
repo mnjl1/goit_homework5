@@ -17,8 +17,8 @@ public class ProductDAO {
         product.setProductName(productName);
         Manufacturer manufacturer = session.get(Manufacturer.class, manufacturerId);
         manufacturer.addProduct(product);
-        session.save(product);
         session.save(manufacturer);
+        session.save(product);
         transaction.commit();
         session.close();
     }
@@ -47,11 +47,5 @@ public class ProductDAO {
         Manufacturer manufacturer = session.get(Manufacturer.class, manufacturer_id);
         session.close();
         return manufacturer;
-    }
-
-    public static void main(String[] args) {
-        ManufacturerDAO dao = new ManufacturerDAO();
-        dao.create("Nestle");
-
     }
 }

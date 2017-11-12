@@ -19,7 +19,7 @@ public class Product {
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "manufacturer_id")
+    @JoinColumn(name = "productId", referencedColumnName = "manufacturerId")
     private Manufacturer manufacturer;
 
     public UUID getId() {

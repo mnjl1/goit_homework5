@@ -1,6 +1,9 @@
 dao\ManufacturerDAO.class
 models\Manufacturer.class
 servlets\AddManufacturerServlet.class
+servlets\GetAllManufacturersServlet.class
 models\Product.class
 servlets\UpdateManufacturerServlet.class
+servlets\AddProductServlet.class
+dao\ProductDAO.class
 servlets\ManufacturerServlet.class
