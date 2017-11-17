@@ -30,12 +30,12 @@
             ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
         %>
         <%
-        List<Manufacturer> manufacturerList = manufacturerDAO.getAll() ;
-        for(Manufacturer m: manufacturerList) {
-            manufacturerName = m.getManufacturerName();
-            manufacturerId = m.getId();
-    %>
-        <option value="<%=manufacturerId%>">"<%=manufacturerId%>"</option>
+            List<Manufacturer> manufacturerList = manufacturerDAO.getAll() ;
+            for(Manufacturer m: manufacturerList) {
+                manufacturerName = m.getManufacturerName();
+                manufacturerId = m.getId();
+        %>
+        <option value="<%=manufacturerId%>">"<%=manufacturerName%>"</option>
         <%}
         %>
 

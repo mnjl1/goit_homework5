@@ -63,5 +63,4 @@ public class ManufacturerDAO {
         manufacturerDAO.create("Nestle");
     }
 
-
 }
