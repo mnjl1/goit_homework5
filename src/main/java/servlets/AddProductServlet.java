@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 
 public class AddProductServlet extends HttpServlet {
@@ -32,7 +33,8 @@ public class AddProductServlet extends HttpServlet {
 
             Long manufacturerId = Long.parseLong(request.getParameter("manufacturerid"));
 
-            productDAO.create(productName, manufacturerId);
+            BigDecimal price = new BigDecimal(request.getParameter("price"));
+            productDAO.create(productName, manufacturerId, price);
 
             response.getWriter().print("Товар добавлен.");
 

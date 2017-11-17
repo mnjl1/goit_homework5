@@ -19,6 +19,9 @@
     <p>Наименование товара</p>
     <input type="text" name="product_name">
 
+    <p>Цена:</p>
+    <input type="text" name="price">
+
     <p>Указать производителя.</p>
 
 
@@ -41,11 +44,9 @@
 
     </select>
 
-
     <input type="submit" value="Добавить.">
 
 </form>
-
 
 </body>
 </html>

@@ -7,14 +7,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.math.BigDecimal;
+
 public class ProductDAO {
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
-    public void create(String productName, Long manufacturerId) {
+    public void create(String productName, Long manufacturerId, BigDecimal price) {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         Product product = new Product();
         product.setProductName(productName);
+        product.setPrice(new BigDecimal(String.valueOf(price)));
         Manufacturer manufacturer = session.get(Manufacturer.class, manufacturerId);
         //manufacturer.addProduct(product);
         product.setManufacturer(manufacturer);
