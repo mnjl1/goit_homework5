@@ -16,7 +16,7 @@
 
 <form action="/add-manufacturer" method="post" accept-charset="UTF-8">
     <p>Наименование Производитель?/p>
-    <input type="text" name="manufacturer_name">
+    <input type="text" name="manufacturerName">
 
     <input type="submit" value="Добавить производителя.">
 

@@ -16,7 +16,8 @@ public class ProductDAO {
         Product product = new Product();
         product.setProductName(productName);
         Manufacturer manufacturer = session.get(Manufacturer.class, manufacturerId);
-        manufacturer.addProduct(product);
+        //manufacturer.addProduct(product);
+        product.setManufacturer(manufacturer);
         session.save(manufacturer);
         session.save(product);
         transaction.commit();

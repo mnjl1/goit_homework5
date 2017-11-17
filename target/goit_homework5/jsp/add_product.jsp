@@ -1,5 +1,6 @@
 <%@ page import="models.Manufacturer" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@ page import="dao.ManufacturerDAO" %><%--
   Created by IntelliJ IDEA.
   User: Dmytro
   Date: 05.11.2017
@@ -16,25 +17,26 @@
 
 <form action="/add-product" method="post" accept-charset="UTF-8">
     <p>Наименование товара</p>
-    <input type="text" name="productName">
+    <input type="text" name="product_name">
 
     <p>Указать производителя.</p>
 
 
-    <select name="list" style="width: 50mm">
+    <select name="manufacturerid" style="width: 50mm">
         <option value="">Производитель</option>
         <%!
             private String manufacturerName;
             private Long manufacturerId;
-        %><%
-            List<Manufacturer> manufacturerList = (List<Manufacturer>) request.getAttribute("list");
-
-            for(Manufacturer m: manufacturerList) {
-                manufacturerName = m.getManufacturerName();
-                manufacturerId = m.getId();
-                %>
-                <option value="<%=manufacturerId%>">"<%=manufacturerName%>"</option>
-            <%}
+            ManufacturerDAO manufacturerDAO = new ManufacturerDAO();
+        %>
+        <%
+        List<Manufacturer> manufacturerList = manufacturerDAO.getAll() ;
+        for(Manufacturer m: manufacturerList) {
+            manufacturerName = m.getManufacturerName();
+            manufacturerId = m.getId();
+    %>
+        <option value="<%=manufacturerId%>">"<%=manufacturerId%>"</option>
+        <%}
         %>
 
     </select>

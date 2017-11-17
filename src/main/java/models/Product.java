@@ -10,7 +10,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "product_id")
-    private UUID id;
+    private Long id;
 
     @Column(name = "product_name")
     private String productName;
@@ -19,14 +19,14 @@ public class Product {
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "productId", referencedColumnName = "manufacturerId")
+    @JoinColumn(name = "manufacturerid")
     private Manufacturer manufacturer;
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -9,13 +9,13 @@ import java.util.Set;
 public class Manufacturer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "manufacturerId")
+    @Column(name = "manufacturerid")
     private Long id;
 
-    @Column(name = "manufacturerName")
+    @Column(name = "manufacturername")
     private String manufacturerName;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "manufacturer")
     Set<Product> products = new HashSet <Product>(0);
 
     public Long getId() {
