@@ -6,8 +6,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ProductDAO {
     SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
@@ -46,10 +48,19 @@ public class ProductDAO {
         session.close();
     }
 
-    public Manufacturer getById(Long manufacturer_id){
+    public Long getById(Long productId){
         Session session = sessionFactory.openSession();
-        Manufacturer manufacturer = session.get(Manufacturer.class, manufacturer_id);
+        Manufacturer manufacturer = session.get(Manufacturer.class, productId);
         session.close();
-        return manufacturer;
+        return productId;
+    }
+
+    public List<Product> getAll(){
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        Query query = session.getSession().createQuery("from Product");
+        List<Product> productList =query.getResultList();
+        session.close();
+        return productList;
     }
 }

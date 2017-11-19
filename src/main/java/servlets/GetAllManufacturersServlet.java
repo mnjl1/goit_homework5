@@ -22,9 +22,17 @@ public class GetAllManufacturersServlet extends HttpServlet {
 
         for (Manufacturer manufacturer: manufacturerList
              ) {
+            Long id = manufacturer.getId();
             String manText = manufacturer.getManufacturerName();
-            response.getWriter().println(manText);
-        }
+            response.getWriter().println(
+                    "<html>"+
+                            "<body>"
+                    +id +": " +manText +
+                            "</body>"
 
+            +"</html>");
+
+
+        }
     }
 }
