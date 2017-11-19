@@ -26,6 +26,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>getAllProduct</servlet-name>
+    <servlet-class>servlets.GetAllProductServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>addProductServlet</servlet-name>
     <servlet-class>servlets.AddProductServlet</servlet-class>
   </servlet>
@@ -50,6 +55,11 @@
   <servlet-mapping>
     <servlet-name>GetAllManufacturersServlet</servlet-name>
     <url-pattern>/get-all-manufacturers</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>getAllProduct</servlet-name>
+    <url-pattern>/get-all-product</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

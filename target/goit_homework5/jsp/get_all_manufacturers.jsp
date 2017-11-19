@@ -12,7 +12,7 @@
 </head>
 <body>
 <form action=/get-all-manufacturers method="post" accept-charset="UTF-8">
-    <p>Наименование Производитель?/p>
+    <p>Наименование Производителя?/p>
         <input type="text" name="manufacturer_name">
 
         <input type="submit" value="Добавить производителя.">

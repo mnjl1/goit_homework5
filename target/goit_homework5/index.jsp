@@ -15,13 +15,18 @@
 </ul>
 
 <ul>
-    <li><a href="/add-product">Добавить товар.</a></li>
-</ul>
-
-<ul>
     <li>
         <a href="/get-all-manufacturers">Список производителей.</a>
     </li>
 </ul>
+
+<ul>
+    <li><a href="/add-product">Добавить товар.</a></li>
+</ul>
+
+<ul>
+    <li><a href="/get-all-product">Список товаров</a></li>
+</ul>
+
 </body>
 </html>
